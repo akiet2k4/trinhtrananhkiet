@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FilmView - Giới thiệu phim</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">FilmView</div>
+      <nav class="main-nav" role="navigation">
+        <button id="btn-home" class="nav-btn active">Trang chủ</button>
+        <button id="btn-genres" class="nav-btn">Thể loại</button>
+        <input id="search" class="search-input" placeholder="Tìm phim, diễn viên..." aria-label="Tìm phim">
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <h1>FilmView — Khám phá phim hay</h1>
+        <p>Tìm phim theo thể loại, xem thông tin, mở trailer và lưu phim yêu thích.</p>
+      </div>
+      <img src="https://picsum.photos/seed/film/900/300" alt="banner" class="hero-img">
+    </section>
+
+    <section class="genres" id="genres-section">
+      <h2>Thể loại</h2>
+      <div id="genre-list" class="genre-list"></div>
+    </section>
+
+    <section class="movies" id="movies-section">
+      <h2 id="movies-title">Phim nổi bật</h2>
+      <div id="movies-grid" class="movies-grid"></div>
+    </section>
+
+    <div class="pagination" id="pagination"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© 2025 FilmView - Đồ án mẫu</div>
+      <div>Người thực hiện: Sinh viên</div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <button id="modal-close" class="modal-close">✕</button>
+      <div class="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Template -->
+  <template id="movie-card-template">
+    <article class="card">
+      <div class="card-top">
+        <img class="card-poster" alt="Poster">
+        <button class="fav-btn" title="Thêm vào yêu thích">♡</button>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title"></h3>
+        <p class="card-meta"></p>
+        <div class="card-actions">
+          <button class="btn-details">Chi tiết</button>
+          <button class="btn-trailer">Trailer</button>
+        </div>
+      </div>
+    </article>
+  </template>
+</body>
+</html>
